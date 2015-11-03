@@ -17,7 +17,7 @@ class ListOfObjects: AbsRule {
         if data != nil {
             if let dataArray:NSArray = data as? NSArray {
                 for dataInArray in dataArray {
-                    if !self.mValidator!.validate(dataInArray) {
+                    if !self.mValidator!.validate(dataInArray as? NSDictionary) {
                         hasError = true;
                     } else {
                         error.append(.None)
@@ -38,7 +38,7 @@ class ListOfObjects: AbsRule {
     
     override func setArgs(args: AnyObject?) -> Bool {
         if args is NSDictionary {
-            mValidator = Validator(rule: args)
+            mValidator = Validator(rule: args as? NSDictionary)
             return true
         }
         return false

@@ -20,7 +20,7 @@ class ListOfDifferentObjects: AbsRule {
                 for dataInArray in dataArray {
                     if dataInArray is NSDictionary {
                         let validator: Validator? = mValidators?[(dataInArray as! Dictionary) [mFieldName!]!]
-                        if validator != nil && !validator!.validate(dataInArray) {
+                        if validator != nil && !validator!.validate(dataInArray as? NSDictionary) {
                             hasError = true
                             error.append(validator!.mError!)
                         } else {
@@ -50,7 +50,7 @@ class ListOfDifferentObjects: AbsRule {
             mValidators = [String: Validator]()
             let rules: [String: AnyObject] = array[1] as! [String: AnyObject]
             for key in rules.keys {
-                mValidators![key] = Validator(rule: rules[key])
+                mValidators![key] = Validator(rule: rules[key] as? NSDictionary)
             }
             return true
         }

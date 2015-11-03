@@ -10,22 +10,22 @@ import Foundation
 
 class Validator {
     var mIsPrepared: Bool
-    var mAllRules: AnyObject?
-    var mData: AnyObject?
+    var mAllRules: NSDictionary?
+    var mData: NSDictionary?
     var mValidator: [String: [AbsRule]]
     var mError: [String: String]?
     var mResult: [String: String]?
     
     
-    init(rule: AnyObject?) {
+    init(rule: NSDictionary?) {
         self.mIsPrepared = false
         self.mValidator = [String: [AbsRule]]()
-        if let theRule: AnyObject = rule {
+        if let theRule: NSDictionary = rule {
             self.mAllRules = theRule
         }
     }
     
-    func validate(data: AnyObject?) -> Bool {
+    func validate(data: NSDictionary?) -> Bool {
         if !self.mIsPrepared {
             prepar()
         }
@@ -62,7 +62,7 @@ class Validator {
     }
     
     func prepar() -> Void {
-        if let rulesDic: NSDictionary = mAllRules as? NSDictionary {
+        if let rulesDic: NSDictionary = mAllRules {
             for key: NSString in (rulesDic.allKeys as? [NSString])! {
                 let rules = rulesDic[key]
                 var fieldRules: [AbsRule] = [AbsRule]()
@@ -121,23 +121,3 @@ class Validator {
         return self.mResult?.description
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
