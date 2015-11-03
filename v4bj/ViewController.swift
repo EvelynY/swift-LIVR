@@ -49,5 +49,8 @@ class ViewController: UIViewController {
             self.result.backgroundColor = errorColor
         }
     }
+    @IBAction func doResign(sender: AnyObject) {
+        self.view.endEditing(true)
+    }
 }
 

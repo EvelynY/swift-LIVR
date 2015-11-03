@@ -18,13 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="{&quot;name&quot;:&quot;required&quot;,&quot;gender&quot;:{&quot;one_of&quot;:[&quot;male&quot;,&quot;female&quot;]},&quot;phone&quot;:{&quot;max_length&quot;:10},&quot;password&quot;:[&quot;required&quot;,{&quot;min_length&quot;:10}]}" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-Xf-7Ty">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="RA9-Xf-7Ty">
                                 <rect key="frame" x="0.0" y="82" width="600" height="150"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="eb5-m1-Qjf"/>
                                 </constraints>
+                                <string key="text">{"name":"required","gender":{"one_of":["male","female"]},"phone":{"max_length":10},"password":["required",{"min_length":10}],"email":["required",{"like":"^[a-zA-Z0-9_\\.]+@[a-zA-Z0-9-]+[\\.a-zA-Z]+$"}]}</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -107,6 +108,9 @@
                             <constraint firstItem="Kvf-Kv-13x" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="p78-ur-jC1"/>
                             <constraint firstItem="tRr-FZ-FrL" firstAttribute="height" secondItem="RA9-Xf-7Ty" secondAttribute="height" id="tjg-Ov-gjp"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Gxq-CD-Meg" appends="YES" id="o4Z-bj-8rN"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="data" destination="tRr-FZ-FrL" id="he7-Oc-LZ9"/>
@@ -115,8 +119,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Gxq-CD-Meg">
+                    <connections>
+                        <action selector="doResign:" destination="BYZ-38-t0r" id="urf-jI-U5Y"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="366" y="221"/>
+            <point key="canvasLocation" x="227" y="220"/>
         </scene>
     </scenes>
 </document>

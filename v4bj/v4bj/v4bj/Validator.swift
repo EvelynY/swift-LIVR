@@ -72,7 +72,9 @@ class Validator {
                     let array: NSArray = rules as! NSArray
                     for ruleInArray in array {
                         if let theRulesInArray: NSDictionary = ruleInArray as? NSDictionary {
-                            fieldRules.append(self.generateRule(theRulesInArray)!)
+                            if let newRule:AbsRule = self.generateRule(theRulesInArray) {
+                                fieldRules.append(newRule)
+                            }
                         } else if let theRulesInArray: NSString = ruleInArray as? NSString {
                             fieldRules.append(RuleManager.getInstance().createRules(theRulesInArray as String, args: .None)!)
                         } else {
