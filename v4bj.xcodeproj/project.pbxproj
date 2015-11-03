@@ -55,6 +55,7 @@
 		E924FB591BE7530C00AEA3B0 /* MinLength.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MinLength.swift; path = v4bj/v4bj/rules/string/MinLength.swift; sourceTree = "<group>"; };
 		E924FB5B1BE7531D00AEA3B0 /* OneOf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OneOf.swift; path = v4bj/v4bj/rules/string/OneOf.swift; sourceTree = "<group>"; };
 		E928A6981BE8648900E6A23B /* sample.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sample.png; sourceTree = "<group>"; };
+		E928A69A1BE8972600E6A23B /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = SOURCE_ROOT; };
 		E9CA14191BE36CB600411A23 /* v4bj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = v4bj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CA141C1BE36CB600411A23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9CA141E1BE36CB600411A23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +149,7 @@
 				E9CA14251BE36CB600411A23 /* LaunchScreen.storyboard */,
 				E928A6981BE8648900E6A23B /* sample.png */,
 				E9CA14281BE36CB600411A23 /* Info.plist */,
+				E928A69A1BE8972600E6A23B /* MyPlayground.playground */,
 			);
 			path = v4bj;
 			sourceTree = "<group>";
