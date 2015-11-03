@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     var ruleJson: NSDictionary?
     var dataJson: NSDictionary?
     
+    let validateColor: UIColor = UIColor(red: 199/255, green: 235/255, blue: 198/255, alpha: 1)
+    let errorColor: UIColor = UIColor(red: 251/255, green: 190/255, blue: 191/255, alpha: 1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()        
     }
@@ -35,15 +38,15 @@ class ViewController: UIViewController {
             let validator:Validator = Validator.init(rule:self.ruleJson)
             if validator.validate(self.dataJson) {
                 self.result.text = self.data.text
-                self.result.backgroundColor = UIColor.greenColor()
+                self.result.backgroundColor = validateColor
             } else {
                 self.result.text = validator.mError!.description
-                self.result.backgroundColor = UIColor.redColor()
+                self.result.backgroundColor = errorColor
             }
             
         } catch let error as NSError {
             self.result.text = error.description
-            self.result.backgroundColor = UIColor.redColor()
+            self.result.backgroundColor = errorColor
         }
     }
 }
