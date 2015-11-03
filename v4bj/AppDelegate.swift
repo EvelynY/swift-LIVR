@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let json: String = "{\"name\":\"required\",\"gender\":{\"one_of\":[\"male\",\"female\"]},\"phone\":{\"max_length\":10},\"password\":[\"required\",{\"min_length\":10}]}"
+        let jsonDic = try!NSJSONSerialization.JSONObjectWithData(json.dataUsingEncoding(NSUTF8StringEncoding)!,options:.MutableContainers)
+        
+        let data: String = "{\"name\":\"John\",\"gender\":\"male\",\"phone\":\"+22221212222\",\"password\":\"mypassword1\"}"
+        let dataDic = try!NSJSONSerialization.JSONObjectWithData(data.dataUsingEncoding(NSUTF8StringEncoding)!, options: .MutableContainers)
+        
+        let validator:Validator = Validator.init(rule:jsonDic)
+        if validator.validate(dataDic) {
+            print(validator.mError!)
+        } else {
+            print(validator.mError!)
+        }
+        
+        
         return true
     }
 
